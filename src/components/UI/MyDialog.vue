@@ -7,20 +7,12 @@
 </template>
 
 <script>
+import toggleMixin from "@/mixins/toggleMixin"
+
 export default {
     name: 'my-dialog',
-    //Этот пропс отвечает за то, видим ли модальное окно, или нет
-    props:{
-        show:{
-            type: Boolean,
-            defailt: false
-        }
-    },
-    methods:{
-        hideDialog(){
-            this.$emit('update:show', false)
-        }
-    }
+    //Подключаем миксин
+    mixins: [toggleMixin]
 }
 </script>
 
